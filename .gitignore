@@ -1,4 +1,5 @@
 venv/
+venv/lib/
 venv/Lib/site-packages/easy_install.py
 venv/Lib/site-packages/Misc/NEWS.d/next/Library/2021-05-14-16-06-02.bpo-44095.v_pLwY.rst
 venv/Lib/site-packages/PyPDF2/__init__.py
