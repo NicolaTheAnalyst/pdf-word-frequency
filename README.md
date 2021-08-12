@@ -1,4 +1,4 @@
-# frequency
+# pdf word frequency
 Banale script che estrae il testo da un pdf e conta la frequenza delle parole producendo un report xls.
 ## Come funziona
 Installare i requisiti con: 
