@@ -13,6 +13,7 @@ def main():
     try:
         path = input("Please provide the absolute path for the PDF file: ") 
         pdf_file = open(path, mode="rb")
+        p = input("Please provide from which PDF page start counting: ")
 
     except FileNotFoundError:
         print("File not found. Please check the inserted path.")
@@ -24,9 +25,11 @@ def main():
 
     read_pdf = PyPDF2.PdfFileReader(pdf_file)
     pdfpages = read_pdf.getNumPages() 
-    i = 0
+    i = int(p) - 1
+    if i < 0:
+        i = 0
     text = ""
-    for i in range(pdfpages):
+    for i in range(i, pdfpages):
         page = read_pdf.getPage(i)
         page_content = page.extractText()
         text += " " + page_content
@@ -52,7 +55,7 @@ def dataexport(data):
         df = pd.DataFrame((list(data.items())), columns=['words', 'count'])
         df.to_excel(writer, index=False)
         writer.save()
-        print("Export salvato.")
+        print("The report has been saved successfully.")
     except:
         print("An error occurred ", sys.exc_info()[0])
         exit()
