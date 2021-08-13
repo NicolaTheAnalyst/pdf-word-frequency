@@ -16,8 +16,6 @@ def main():
         pdf_file = open(path, mode="rb")
         p = input("Please provide from which PDF page start counting: ")
 
-        #print(filename)
-
     except FileNotFoundError:
         print("File not found. Please check the inserted path.")
         main()
